@@ -14,15 +14,26 @@ theSubmitButton.addEventListener("click", (event) => {
   doneButton.classList.add("doneButtonAndRemoveButton");
   removeButton.classList.add("doneButtonAndRemoveButton");
   editButton.classList.add("doneButtonAndRemoveButton");
-  newListItem.textContent = mainInput.value;
-  removeButton.textContent = "REMOVE";
-  doneButton.textContent = "DONE";
-  editButton.textContent = "EDIT";
-  theMainUl[0].appendChild(newDivForUl);
-  newDivForUl.appendChild(newDivForLi);
-  newDivForUl.appendChild(newListItem);
-  newDivForLi.appendChild(doneButton);
-  newDivForLi.appendChild(editButton);
-  newDivForLi.appendChild(removeButton);
+  if (mainInput.value === "") {
+    alert("لازم  تخلي كلام")
+  }else {
+    newListItem.textContent = mainInput.value;
+    mainInput.value = "";
+    removeButton.textContent = "REMOVE";
+    doneButton.textContent = "DONE";
+    editButton.textContent = "EDIT";
+    theMainUl[0].appendChild(newDivForUl);
+    newDivForUl.appendChild(newDivForLi);
+    newDivForUl.appendChild(newListItem);
+    newDivForLi.appendChild(doneButton);
+    newDivForLi.appendChild(editButton);
+    newDivForLi.appendChild(removeButton);
+  }
+ 
+  removeButton.addEventListener("click", () => {
+    newDivForUl.remove();
+  });
+  editButton.addEventListener("click", () => {
+    
+  });
 });
-

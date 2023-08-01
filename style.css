@@ -1,43 +1,47 @@
-body{
-    background-color: powderblue;
+body {
+  background-color: powderblue;
 }
 .mainDiv {
   display: flex;
-    
+
   justify-content: center;
   align-items: center;
 }
 .continuer {
-    border: 1px solid black;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   width: 480px;
   justify-content: center;
   align-items: center;
 }
-button , input{
-    width: 90%;
+button,
+input {
+  width: 90%;
 }
-.theMainDivForUl{
-    width: 100%;
+.theMainDivForUl {
+  width: 100%;
 }
-.newDivForUl{
-    display: flex;
-    width: 100%;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    border: 1px solid black;
-    align-items: center;
-    gap: 2px;
-    ;
+.newDivForUl {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  border: 1px solid black;
+  align-items: center;
+  gap: 2px;
 }
-.doneButtonAndRemoveButton{
-width: 3rem;
-font-size: 7px;
-
+.doneButtonAndRemoveButton {
+  width: 3rem;
+  font-size: 7px;
 }
-.newDivForLi{
-    display: flex;
-    align-items: center;
-
+.newDivForLi {
+  display: flex;
+  align-items: center;
+}
+.isHidden {
+  display: none;
+}
+.isActive {
+    display: block;
 }
