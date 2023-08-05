@@ -2,11 +2,11 @@
 
 This is a simple web application that allows you to create a dynamic list of items. You can add, edit, and remove items from the list in real-time.
 
-![1](<Screenshot (2).png>)
-![2](<Screenshot (4).png>)
-![3](<Screenshot (1).png>)
-![4](<Screenshot (3).png>)
-![5](Screenshot5.png)
+![1](</All-Image/Screenshot (2).png>)
+![2](</All-Image/Screenshot (4).png>)
+![3](</All-Image/Screenshot (1).png>)
+![4](</All-Image/Screenshot (3).png>)
+![5](</All-Image/Screenshot5.png>)
 
 
 
