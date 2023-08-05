@@ -2,18 +2,14 @@
 
 This is a simple web application that allows you to create a dynamic list of items. You can add, edit, and remove items from the list in real-time.
 
-![1](</All-Image/Screenshot (2).png>)
-![2](</All-Image/Screenshot (4).png>)
-![3](</All-Image/Screenshot (1).png>)
-![4](</All-Image/Screenshot (3).png>)
-![5](</All-Image/Screenshot5.png>)
-
 
 
 
 ## Table of Contents
 
 - [Demo](#demo)
+- [Dynamic List Creator Screenshot](#screenshot)
+
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
@@ -59,6 +55,13 @@ cd To-Do-Task-Manager
 1. To edit an item, click the "✍" button next to it. To save the changes, click the "✅" button.
 
 1. To mark an item as unchecked (unselect), click the "❌" button next to the item when it is highlighted in yellow.
+
+# Screenshot
+![1](</All-Image/Screenshot (2).png>)
+![2](</All-Image/Screenshot (4).png>)
+![3](</All-Image/Screenshot (1).png>)
+![4](</All-Image/Screenshot (3).png>)
+![5](</All-Image/Screenshot5.png>)
 
 
 
