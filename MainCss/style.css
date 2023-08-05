@@ -7,24 +7,56 @@ body {
   margin: 0;
   padding: 0;
 }
+.dark-mode {
+  background-color: #333;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#darkModeToggle {
+  position: fixed;
+  width: fit-content;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+}
+#darkModeIcon {
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  padding: 5px 10px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.cheackTask {
+  background-color: yellow;
+  transition: background-color 0.1s;
+}
+
+.cheackTask:hover {
+  background-color: #9437ac;
+  transition: background-color 0.1s;
+  font-weight: bold;
+}
 .mainDiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+
 }
 .continuer {
   display: flex;
   flex-direction: column;
-  width: 480px;
+  width: 600px;
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
+  margin-top: 20px;
 
 }
 .container2 {
@@ -34,10 +66,9 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #8b5cf6;
-  border-radius: 10px;
-  padding: 20px;
   margin-top: 20px;
   box-shadow: 20px 20px 50px grey;
+  gap: 10px;
 }
 #mainInput {
   height: 3rem;
@@ -61,8 +92,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin-top: 20px;
-
-  
 }
 .container2,
 button {
@@ -79,15 +108,52 @@ input {
 
 .newDivForAdd {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-color: #D85CF6;
+  background-color: #d85cf6;
   margin-top: 20px;
   border: none;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0px 0px 20px grey;
+}
+.divTaskAndButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+.divUserNameAndImage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+.divExtraNotesAndDate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+
 }
 .doneButtonAndRemoveButton {
   width: fit-content;
@@ -104,7 +170,6 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f65c7a;
   color: white;
   font-size: 1rem;
   padding: 10px;
@@ -124,4 +189,76 @@ input {
 
 .newListItem:hover {
   cursor: auto;
+}
+#submit:hover {
+  background-color: #a3d3ef;
+  color: white;
+}
+#submit:active {
+  background-color: #65bbea;
+}
+
+.newListItem:hover {
+  background-color: #9437ac;
+
+  font-weight: bold;
+}
+.done {
+  text-decoration: line-through;
+  color: grey;
+}
+#searchDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#searchDive input {
+  width: 90%;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+}
+#searchDive input::placeholder {
+  font-size: 0.8rem;
+  color: grey;
+}
+#imagePlace,
+#deadline,#userName,#additionalNotes {
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#deadline{
+  color: grey;
+}
+.mainFormForPrioritie {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-right: 16px;
+}
+#low {
+  background-color: green;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+#medium {
+  background-color: orange;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+#high {
+  background-color: tomato;
+  border-radius: 10px;
+  padding: 0 5px;
 }
