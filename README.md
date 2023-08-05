@@ -1,35 +1,102 @@
 # To-Do-Task-Manager
 
-Your task is to create a To-Do list manager that allows users to add, remove, and update tasks on a webpage.  
-The webpage should display a list of tasks that users can add to, delete, or edit as needed.
+This is a simple web application that allows you to create a dynamic list of items. You can add, edit, and remove items from the list in real-time.
 
-## Instructions
-
-**Step 1**: Create a basic HTML structure for the To-Do list manager.   
-The page should have an input field to add tasks, a button to submit tasks, and a list to display tasks.
-
-**Step 2**: Add functionality to add new tasks.   
-When a user enters a new task into the input field and clicks the "Add" button, the new task should be added to the list.
-
-**Step 3** : Add functionality to delete tasks.   
-When a user clicks on a task's delete button, it should be removed from the list.
-
-**Step 4**:  Add functionality to toggle tasks as "done" when the user clicks on the done button related to that task.    
-When the task is marked as done, the text of the task should be changed to a strike-through text. 
-
-**Step 5**: Add styling to make the To-Do Task manager look nice and visually appealing.  
-Consider using CSS to add colors, fonts, and spacing to the page.
+![1](<Screenshot (2).png>)
+![2](<Screenshot (4).png>)
+![3](<Screenshot (1).png>)
+![4](<Screenshot (3).png>)
+![5](Screenshot5.png)
 
 
-**Extra Feature**: Add functionality to edit existing tasks.
-- When a user clicks on the "Edit" button of a todo task, it should become editable.   
-- The task `p` tag should be changed into an `input` element, and a "Save" button should be available.  
-- It's a good idea to make the "Edit" button disabled when the user is editing the current task.  
-- The user should be able to change the task text and click a "Save" button to update the task.
 
 
-## Example
-<img src="./end-result.png">
+## Table of Contents
 
-## Example with Edit Feature
-<img src="./end-result-with-edit.png">
+- [Demo](#demo)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Author](#author)
+- [License](#license)
+
+## Demo
+
+You can try out the live demo [here](http://127.0.0.1:5500/).
+
+## Features
+
+- Add new items to the list.
+- Edit existing items.
+- Remove items from the list.
+- Mark items as checked.
+- Mark items as unchecked.
+- Filter items by checked/unchecked status.
+- Responsive design.
+
+
+## Getting Started
+
+To get a local copy up and running, follow these steps:
+
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/dynamic-list-creator.git
+```
+### Navigate to the project directory:
+```bash
+cd To-Do-Task-Manager
+```
+- Open index.html in your browser.
+## Usage
+1. Type an item in the input field and click the "Submit" button to add it to the list.
+
+1. To remove an item, click the "❌" button next to it.
+
+1. To edit an item, click the "✍" button next to it. To save the changes, click the "✅" button.
+
+1. To mark an item as unchecked (unselect), click the "❌" button next to the item when it is highlighted in yellow.
+
+
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to create a pull request or submit an issue.
+
+1. Fork the project (Click on the Fork button in the top right corner of this page).
+
+2. Clone the forked repository to your local machine:
+```bash
+git clone https://github.com/skeaz/To-Do-Task-Manager
+```
+
+3. Create a new branch for your feature:
+
+```bash
+git checkout -b feature/your-feature-name
+```
+4. Make your changes and commit them:
+```bash
+git add .
+git commit -m "Add your commit message here"
+```
+5. Push to the branch:
+```bash
+git push origin feature/your-feature-name
+```
+6. Create a pull request on the original repository.
+
+## Author
+Skeaz - [GitHub](https://github.com/skeaz)
+
+Mnuaf Ahmed - [GitHub](https://github.com/munf23)
+
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+``` js
+Please replace the placeholders such as `<your-demo-url.com>` and `your-username` with appropriate information for your project. Also, if you have a screenshot of your project, place it in the project directory and update the `screenshot.png` link in the `README.md` file to showcase your project's appearance.
+``````
