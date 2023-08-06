@@ -32,6 +32,7 @@ You can try out the live demo [here](http://127.0.0.1:5500/).
 - Responsive design.
 
 
+
 ## Getting Started
 
 To get a local copy up and running, follow these steps:
@@ -56,12 +57,18 @@ cd To-Do-Task-Manager
 
 1. To mark an item as unchecked (unselect), click the "❌" button next to the item when it is highlighted in yellow.
 
+1. To mark an item as checked (select), click the "TASK" button next to the item when it is not highlighted in yellow.
+
+1. To filter the list by checked/unchecked items, click the "Filter" dropdown and select either "Checked" or "Unchecked".
+
+
+
 # Screenshot
-![1](</All-Image/Screenshot (2).png>)
-![2](</All-Image/Screenshot (4).png>)
-![3](</All-Image/Screenshot (1).png>)
-![4](</All-Image/Screenshot (3).png>)
-![5](</All-Image/Screenshot5.png>)
+![1](</All-Image/Screenshot   (2).png)
+![2](</All-Image/Screenshot   (3).png>)
+![3](</All-Image/Screenshot   (4).png>)
+![4](</All-Image/Screenshot   (1).png>)
+
 
 
 

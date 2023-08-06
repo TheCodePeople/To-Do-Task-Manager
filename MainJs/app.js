@@ -120,8 +120,8 @@ theSubmitButton.addEventListener("click", (event) => {
       editButton.remove();
       removeButton.remove();
     } else {
-      divTaskAndButtons.appendChild(editButton);
-      divTaskAndButtons.appendChild(removeButton);
+      divTaskAndButtons2.appendChild(editButton);
+      divTaskAndButtons2.appendChild(removeButton);
     }
   });
   const searchInput = document.getElementById("searchInput");
@@ -140,11 +140,6 @@ theSubmitButton.addEventListener("click", (event) => {
 
 darkModeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
-  body.style.transition = '2s';
+  body.style.transition = "2s";
 });
 /////////
-
-
-  
-  
-
