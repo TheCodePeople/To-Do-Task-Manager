@@ -4,9 +4,14 @@ const mainInput = document.getElementById("mainInput");
 const userName = document.getElementById("userName");
 const imagePlace = document.getElementById("imagePlace");
 const deadline = document.getElementById("deadline");
+const low = document.getElementById("low");
+const medium = document.getElementById("medium");
+const high = document.getElementById("high");
 const additionalNotes = document.getElementById("additionalNotes");
 const container2 = document.getElementsByClassName("container2");
 const continuer = document.getElementsByClassName("continuer");
+const darkModeToggle = document.getElementById("darkModeToggle");
+const body = document.body;
 
 theSubmitButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -14,9 +19,11 @@ theSubmitButton.addEventListener("click", (event) => {
   const newDivForAdd = document.createElement("div");
   const divUserNameAndImage = document.createElement("div");
   const divTaskAndButtons = document.createElement("div");
+  const divTaskAndButtons2 = document.createElement("div");
   const divExtraNotesAndDate = document.createElement("div");
   const userNameInput = document.createElement("H3");
   const dateUser = document.createElement("H3");
+  const toDo = document.createElement("H3");
   const userNameImg = document.createElement("img");
   const newListItem = document.createElement("input");
   const noteUser = document.createElement("input");
@@ -36,14 +43,20 @@ theSubmitButton.addEventListener("click", (event) => {
   removeButton.classList.add("doneButtonAndRemoveButton");
   editButton.classList.add("doneButtonAndRemoveButton");
   ///////////
-  if (!mainInput.value.trim()) {
-    alert("لازم  تخلي كلام");
+  if (
+    !mainInput.value.trim() ||
+    !userName.value.trim() ||
+    !deadline.value.trim()
+  ) {
+    alert("Please fill out all fields!");
+    return;
   } else {
-    newListItem.value = mainInput.value;
-    userNameInput.textContent = userName.value;
+    newListItem.value = mainInput.value.toUpperCase().trim();
+    userNameInput.textContent = "NAME : " + userName.value.toUpperCase().trim();
     userNameImg.src = imagePlace.value;
-    noteUser.value = additionalNotes.value;
+    noteUser.value = "NOTES : " + additionalNotes.value;
     dateUser.textContent = deadline.value;
+    toDo.textContent = "To Do :";
     mainInput.value = "";
     userName.value = "";
     imagePlace.value = "";
@@ -53,16 +66,34 @@ theSubmitButton.addEventListener("click", (event) => {
     editButton.innerHTML = "&#9997;";
     editButton.style.fontSize = "20px";
     removeButton.style.fontSize = "20px";
+    ///////////////////
+
+    if (low.checked) {
+      console.log("values");
+      newDivForAdd.classList.add("lowPrioritie");
+    }
+    if (medium.checked) {
+      console.log("inputsPriorities.id");
+      newDivForAdd.classList.add("mediumPrioritie");
+    }
+    if (high.checked) {
+      console.log("ss");
+      newDivForAdd.classList.add("highPrioritie");
+    }
+
+    //////////////////
     container2[0].appendChild(newDivForAdd);
     divUserNameAndImage.appendChild(userNameInput);
     divUserNameAndImage.appendChild(userNameImg);
     newDivForAdd.appendChild(divUserNameAndImage);
+    divTaskAndButtons.appendChild(toDo);
     divTaskAndButtons.appendChild(newListItem);
-    divTaskAndButtons.appendChild(editButton);
-    divTaskAndButtons.appendChild(removeButton);
+    divTaskAndButtons.appendChild(divTaskAndButtons2);
+    divTaskAndButtons2.appendChild(editButton);
+    divTaskAndButtons2.appendChild(removeButton);
     newDivForAdd.appendChild(divTaskAndButtons);
-    divExtraNotesAndDate.appendChild(noteUser);
     divExtraNotesAndDate.appendChild(dateUser);
+    divExtraNotesAndDate.appendChild(noteUser);
     newDivForAdd.appendChild(divExtraNotesAndDate);
   }
   removeButton.addEventListener("click", () => {
@@ -89,8 +120,8 @@ theSubmitButton.addEventListener("click", (event) => {
       editButton.remove();
       removeButton.remove();
     } else {
-      newDivForAdd.appendChild(editButton);
-      newDivForAdd.appendChild(removeButton);
+      divTaskAndButtons.appendChild(editButton);
+      divTaskAndButtons.appendChild(removeButton);
     }
   });
   const searchInput = document.getElementById("searchInput");
@@ -106,16 +137,14 @@ theSubmitButton.addEventListener("click", (event) => {
   });
 });
 /////////
-const darkModeToggle = document.getElementById("darkModeToggle");
-const darkModeIcon = document.getElementById("darkModeIcon");
-const body = document.body;
-const h1 = document.getElementsByTagName("h1");
 
-darkModeToggle.addEventListener("click", (e) => {
+darkModeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
-  // if (body.classList.contains("darkmode")) {
-  //   body.style.backgroundColor = "#333";
-  // } else {
-  //   body.style.backgroundColor = "#eee";
-  // }
+  body.style.transition = '2s';
 });
+/////////
+
+
+  
+  
+
