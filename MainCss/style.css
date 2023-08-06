@@ -9,29 +9,25 @@ body {
 }
 .dark-mode {
   background-color: #333;
-  transition: background-color 0.5s, color 0.5s;
 }
 
 #darkModeToggle {
   position: fixed;
   width: fit-content;
-  font-size: 1.5rem;
+  font-size: 4rem;
   border: none;
   cursor: pointer;
   position: fixed;
   top: 20px;
   right: 10px;
+  background-color: transparent;
 }
-#darkModeIcon {
-  color: #fff;
-  background-color: #333;
-  border-radius: 3px;
-  padding: 5px 10px;
-  transition: background-color 0.5s, color 0.5s;
+#darkModeToggle:hover {
+  color: #999;
 }
 
 .cheackTask {
-  background-color: yellow;
+  background-color: rgb(255, 255, 0);
   transition: background-color 0.1s;
 }
 
@@ -44,7 +40,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .continuer {
   display: flex;
@@ -57,7 +52,6 @@ body {
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-
 }
 .container2 {
   width: 100%;
@@ -121,6 +115,7 @@ input {
 }
 .divTaskAndButtons {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -129,7 +124,17 @@ input {
   border: none;
   border-radius: 10px;
   padding: 10px;
+}
+.divTaskAndButtons2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
 }
 .divUserNameAndImage {
   display: flex;
@@ -141,11 +146,10 @@ input {
   border: none;
   border-radius: 10px;
   padding: 10px;
-
 }
 .divExtraNotesAndDate {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   width: 100%;
   flex-direction: column;
@@ -153,7 +157,18 @@ input {
   border: none;
   border-radius: 10px;
   padding: 10px;
-
+}
+.divExtraNotesAndDate input {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #622dde;
+  color: white;
 }
 .doneButtonAndRemoveButton {
   width: fit-content;
@@ -199,7 +214,7 @@ input {
 }
 
 .newListItem:hover {
-  background-color: #9437ac;
+  background-color: rgb(255, 255, 0, 70%);
 
   font-weight: bold;
 }
@@ -228,7 +243,9 @@ input {
   color: grey;
 }
 #imagePlace,
-#deadline,#userName,#additionalNotes {
+#deadline,
+#userName,
+#additionalNotes {
   height: 3rem;
   border-radius: 10px;
   border: none;
@@ -238,7 +255,7 @@ input {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
-#deadline{
+#deadline {
   color: grey;
 }
 .mainFormForPrioritie {
@@ -248,17 +265,35 @@ input {
   margin-right: 16px;
 }
 #low {
-  background-color: green;
+  background-color: #aaff00;
   border-radius: 10px;
   padding: 0 5px;
 }
 #medium {
-  background-color: orange;
+  background-color: #ffbd33;
   border-radius: 10px;
   padding: 0 5px;
 }
 #high {
-  background-color: tomato;
+  background-color: #ff3333;
   border-radius: 10px;
   padding: 0 5px;
+}
+.lowPrioritie {
+  border: 8px solid #aaff00;
+}
+.mediumPrioritie {
+  border: 8px solid #ffbd33;
+}
+.highPrioritie {
+  border: 8px solid #ff3333;
+}
+#searchInput {
+  width: 80%;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  border-radius: 10px;
 }
