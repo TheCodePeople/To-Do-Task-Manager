@@ -1,3 +1,7 @@
+// import firebase data from firebase.js
+import { getFirebase } from "/firebase.js";
+const db = getFirebase();
+//getElements from HTML
 const theMainUl = document.getElementsByClassName("theMainUl");
 const theSubmitButton = document.getElementById("submit");
 const mainInput = document.getElementById("mainInput");
@@ -8,138 +12,124 @@ const low = document.getElementById("low");
 const medium = document.getElementById("medium");
 const high = document.getElementById("high");
 const additionalNotes = document.getElementById("additionalNotes");
-const container2 = document.getElementsByClassName("container2");
-const continuer = document.getElementsByClassName("continuer");
+const container2 = document.getElementById("container2");
 const darkModeToggle = document.getElementById("darkModeToggle");
 const body = document.body;
+//////////
 
-theSubmitButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  ////create button
-  const newDivForAdd = document.createElement("div");
-  const divUserNameAndImage = document.createElement("div");
-  const divTaskAndButtons = document.createElement("div");
-  const divTaskAndButtons2 = document.createElement("div");
-  const divExtraNotesAndDate = document.createElement("div");
-  const userNameInput = document.createElement("H3");
-  const dateUser = document.createElement("H3");
-  const toDo = document.createElement("H3");
-  const userNameImg = document.createElement("img");
-  const newListItem = document.createElement("input");
-  const noteUser = document.createElement("input");
-  const removeButton = document.createElement("button");
-  const editButton = document.createElement("button");
-  ////////
-
-  editButton.title = "EDIT";
-  removeButton.title = "REMOVE";
-  //////////////
-  newDivForAdd.classList.add("newDivForAdd");
-  divUserNameAndImage.classList.add("divUserNameAndImage");
-  divTaskAndButtons.classList.add("divTaskAndButtons");
-  divExtraNotesAndDate.classList.add("divExtraNotesAndDate");
-  newListItem.classList.add("newListItem");
-  newListItem.setAttribute("readonly", "readonly");
-  removeButton.classList.add("doneButtonAndRemoveButton");
-  editButton.classList.add("doneButtonAndRemoveButton");
-  ///////////
-  if (
-    !mainInput.value.trim() ||
-    !userName.value.trim() ||
-    !deadline.value.trim()
-  ) {
-    alert("Please fill out all fields!");
-    return;
-  } else {
-    newListItem.value = mainInput.value.toUpperCase().trim();
-    userNameInput.textContent = "NAME : " + userName.value.toUpperCase().trim();
-    userNameImg.src = imagePlace.value;
-    noteUser.value = "NOTES : " + additionalNotes.value;
-    dateUser.textContent = deadline.value;
-    toDo.textContent = "To Do :";
-    mainInput.value = "";
-    userName.value = "";
-    imagePlace.value = "";
-    additionalNotes.value = "";
-    deadline.value = "";
-    removeButton.innerHTML = "&#10060;";
-    editButton.innerHTML = "&#9997;";
-    editButton.style.fontSize = "20px";
-    removeButton.style.fontSize = "20px";
-    ///////////////////
-
-    if (low.checked) {
-      console.log("values");
-      newDivForAdd.classList.add("lowPrioritie");
+//////////
+let taskCount = 1;
+// display firebase data to the page
+const taskRef = db.collection("tasks");
+taskRef.orderBy("TaskCount").onSnapshot((doc) => {
+  let updatedTaskCount = 1;
+  doc.forEach((element) => {
+    const fireBaseData = element.data();
+    const newDivForAdd = document.createElement("div");
+    newDivForAdd.innerHTML = `
+    <div class="divTaskAndButtons">
+    <h3>Task ${taskCount}</h3>
+            <input class="newListItem" readonly="readonly" value="${fireBaseData.task}" id="${fireBaseData.id}"> 
+      <div>
+        <button title="EDIT" class="doneButtonAndRemoveButton" style="font-size: 20px;" id="editButton_${fireBaseData.id}">✍</button>
+        <button title="REMOVE" class="doneButtonAndRemoveButton" style="font-size: 20px;" id="removeButton_${fireBaseData.id}">❌</button>
+      </div>
+    </div>
+    <div class="divUserNameAndImage">
+      <h3>${fireBaseData.userName}</h3>
+    <img src="${fireBaseData.imagePlace}" alt=""></div>
+    <div class="divExtraNotesAndDate">
+      <h3>${fireBaseData.deadline}</h3>
+      <input value="${fireBaseData.additionalNotes}">
+    </div>
+  `;
+    if (fireBaseData.Priorities === "low") {
+      newDivForAdd.classList.add("lowPriorities");
     }
-    if (medium.checked) {
-      console.log("inputsPriorities.id");
-      newDivForAdd.classList.add("mediumPrioritie");
+    if (fireBaseData.Priorities === "medium") {
+      newDivForAdd.classList.add("mediumPriorities");
     }
-    if (high.checked) {
-      console.log("ss");
-      newDivForAdd.classList.add("highPrioritie");
+    if (fireBaseData.Priorities === "high") {
+      newDivForAdd.classList.add("highPriorities");
     }
-
-    //////////////////
-    container2[0].appendChild(newDivForAdd);
-    divUserNameAndImage.appendChild(userNameInput);
-    divUserNameAndImage.appendChild(userNameImg);
-    newDivForAdd.appendChild(divUserNameAndImage);
-    divTaskAndButtons.appendChild(toDo);
-    divTaskAndButtons.appendChild(newListItem);
-    divTaskAndButtons.appendChild(divTaskAndButtons2);
-    divTaskAndButtons2.appendChild(editButton);
-    divTaskAndButtons2.appendChild(removeButton);
-    newDivForAdd.appendChild(divTaskAndButtons);
-    divExtraNotesAndDate.appendChild(dateUser);
-    divExtraNotesAndDate.appendChild(noteUser);
-    newDivForAdd.appendChild(divExtraNotesAndDate);
-  }
-  removeButton.addEventListener("click", () => {
-    newDivForAdd.remove();
-  });
-  editButton.addEventListener("click", () => {
-    if (editButton.innerHTML === "✍") {
-      editButton.innerHTML = "&#9989;";
-      editButton.title = "SAVE";
-      editButton.style.fontSize = "20px";
-      newListItem.removeAttribute("readonly");
-      newListItem.focus();
-    } else {
-      editButton.innerHTML = "&#9997;";
-      editButton.style.fontSize = "20px";
-      newListItem.setAttribute("readonly", "readonly");
-    }
-  });
-  newListItem.addEventListener("click", (e) => {
-    // const unCheck = document.createElement("button");
-    theTask = e.target;
-    theTask.classList.toggle("cheackTask");
-    if (theTask.classList.contains("cheackTask")) {
-      editButton.remove();
-      removeButton.remove();
-    } else {
-      divTaskAndButtons2.appendChild(editButton);
-      divTaskAndButtons2.appendChild(removeButton);
-    }
-  });
-  const searchInput = document.getElementById("searchInput");
-  searchInput.addEventListener("keyup", (e) => {
-    const searchValue = e.target.value.toLowerCase();
-
-    if (newListItem.value.toLowerCase().includes(searchValue.toLowerCase())) {
-      newDivForAdd.style.display = "flex";
-      foundItems = true;
-    } else {
-      newDivForAdd.style.display = "none";
-    }
+    newDivForAdd.classList.add("newDivForAdd");
+    container2.appendChild(newDivForAdd);
+    const removeButton = document.getElementById(
+      `removeButton_${fireBaseData.id}`
+    );
+    const task = document.getElementById(`${fireBaseData.id}`);
+    // removeButton addEventListener
+    removeButton.addEventListener("click", (e) => {
+      const taskId = task.id;
+      // Delete the task document based on its ID
+      if (taskId === fireBaseData.id) {
+        db.collection("tasks")
+          .doc(fireBaseData.id)
+          .delete()
+          .then(() => {
+            console.log("Document successfully deleted!");
+            // Update TaskCount for remaining tasks
+            taskRef.get().then((snapshot) => {
+              snapshot.docs.forEach((doc) => {
+                const taskDoc = db.collection("tasks").doc(doc.id);
+                taskDoc.update({
+                  TaskCount: updatedTaskCount,
+                });
+                updatedTaskCount++;
+              });
+              window.location.reload();
+            });
+          })
+          .catch((error) => {
+            console.error("Error removing document: ", error);
+          });
+      }
+    });
+    taskCount++;
   });
 });
-/////////
-
+// add event listener to the submit button
+theSubmitButton.addEventListener("click", (event) => {
+  let newValues = "";
+  if (low.checked) {
+    newValues = "low";
+  }
+  if (medium.checked) {
+    newValues = "medium";
+  }
+  if (high.checked) {
+    newValues = "high";
+  }
+  // event.preventDefault();
+  const task = db.collection("tasks");
+  const taskData = mainInput.value;
+  if (taskData.trim() !== "") {
+    const newId = Math.random().toString(36).substring(7);
+    task
+      .doc(`${newId}`)
+      .set({
+        task: taskData,
+        id: newId,
+        deadline: deadline.value,
+        Priorities: newValues,
+        additionalNotes: additionalNotes.value,
+        userName: userName.value,
+        imagePlace: imagePlace.value,
+        TaskCount: taskCount,
+      })
+      .then(() => {
+        mainInput.value = "";
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    return;
+  }
+});
+// dark mood button
 darkModeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
-  body.style.transition = "2s";
+  body.style.transition = "1s";
 });
-/////////

@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo Task Manager</title>
     <link rel="stylesheet" href="/MainCss/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
   </head>
   <body>
     <div class="mainDiv">
       <div class="continuer" id="continuer">
         <button id="darkModeToggle"><span id="darkModeIcon">🌙</span></button>
         <h1 id="pageTitle">ToDo Task Manager</h1>
-        <div class="container2">
+        <div class="container2" id="container2">
           <input
             type="text"
             placeholder="Enter your To Do List"
@@ -58,7 +60,7 @@
         </div>
       </div>
     </div>
-
-    <script src="/MainJs/app.js"></script>
   </body>
+  <script src="/MainJs/app.js" type="module"></script>
+  <!-- <script src="/firebase.js" type="module"></script> -->
 </html>

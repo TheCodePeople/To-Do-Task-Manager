@@ -279,13 +279,13 @@ input {
   border-radius: 10px;
   padding: 0 5px;
 }
-.lowPrioritie {
+.lowPriorities {
   border: 8px solid #aaff00;
 }
-.mediumPrioritie {
+.mediumPriorities {
   border: 8px solid #ffbd33;
 }
-.highPrioritie {
+.highPriorities {
   border: 8px solid #ff3333;
 }
 #searchInput {
