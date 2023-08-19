@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo Task Manager</title>
+    <link rel="stylesheet" href="/MainCss/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <div class="mainDiv">
+      <div class="continuer" id="continuer">
+        <button id="darkModeToggle"><span id="darkModeIcon">🌙</span></button>
+        <h1 id="pageTitle">ToDo Task Manager</h1>
+        <div class="container2" id="container2">
+          <input
+            type="text"
+            placeholder="Enter your To Do List"
+            id="mainInput"
+          />
+          <input type="text" placeholder="Image (Optional)" id="imagePlace" />
+          <input type="date" id="deadline" name="Deadline" />
+           
+          <h3>Priority:</h3>
+          <form class="mainFormForPrioritie">
+              <input type="radio" id="low" name="fav_language" value="low" />  
+            <label for="low" id="low">LOW</label><br />
+             
+            <input
+              type="radio"
+              id="medium"
+              name="fav_language"
+              value="medium"
+            />
+              <label for="medium" id="medium">MEDIUM</label><br />
+             
+            <input type="radio" id="high" name="fav_language" value="high" />  
+            <label for="high" id="high">HIGH</label>
+          </form>
+          <input type="text" placeholder="YOUR NAME" id="userName" />
+          <input
+            type="text"
+            placeholder="Do you have additional notes ?"
+            id="additionalNotes"
+          />
+          <button type="submit" id="submit">ADD</button>
+          <div id="searchDiv">
+            <h1>SEARCH</h1>
+            <input type="text" placeholder="Search Task" id="searchInput" />
+          </div>
+          <form>
+            <label for="category ">CHOOSE A CATEGORY :</label>
+            <select id="category ">
+              <option value="all">ALL</option>
+              <option value="complete">COMPLETE</option>
+              <option value="unComplete">UNCOMPLETE</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/MainJs/app.js" type="module"></script>
+  <!-- <script src="/firebase.js" type="module"></script> -->
+</html>

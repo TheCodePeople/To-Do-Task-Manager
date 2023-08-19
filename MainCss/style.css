@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+}
+.dark-mode {
+  background-color: #333;
+}
+
+#darkModeToggle {
+  position: fixed;
+  width: fit-content;
+  font-size: 4rem;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+}
+#darkModeToggle:hover {
+  color: #999;
+}
+
+.cheackTask {
+  background-color: rgb(255, 255, 0);
+  transition: background-color 0.1s;
+}
+
+.cheackTask:hover {
+  background-color: #9437ac;
+  transition: background-color 0.1s;
+  font-weight: bold;
+}
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.continuer {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.container2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8b5cf6;
+  margin-top: 20px;
+  box-shadow: 20px 20px 50px grey;
+  gap: 10px;
+}
+#mainInput {
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#submit {
+  background-color: #622dde;
+
+  color: white;
+
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.container2,
+button {
+  flex: 1 1 0%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+button,
+input {
+  width: 90%;
+  text-align: center;
+}
+
+.newDivForAdd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #d85cf6;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 20px grey;
+}
+.divTaskAndButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.divTaskAndButtons2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.divUserNameAndImage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.divExtraNotesAndDate {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.divExtraNotesAndDate input {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #622dde;
+  color: white;
+}
+.doneButtonAndRemoveButton {
+  width: fit-content;
+  font-size: 7px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #a3d3ef;
+  font-size: 0.6rem;
+}
+.newDivForLi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px grey;
+}
+.newListItem {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.newListItem:hover {
+  cursor: auto;
+}
+#submit:hover {
+  background-color: #a3d3ef;
+  color: white;
+}
+#submit:active {
+  background-color: #65bbea;
+}
+
+.newListItem:hover {
+  background-color: rgb(255, 255, 0, 70%);
+
+  font-weight: bold;
+}
+.done {
+  text-decoration: line-through;
+  color: grey;
+}
+#searchDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#searchDive input {
+  width: 90%;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+}
+#searchDive input::placeholder {
+  font-size: 0.8rem;
+  color: grey;
+}
+#imagePlace,
+#deadline,
+#userName,
+#additionalNotes {
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#deadline {
+  color: grey;
+}
+.mainFormForPrioritie {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-right: 16px;
+}
+#low {
+  background-color: #aaff00;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+#medium {
+  background-color: #ffbd33;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+#high {
+  background-color: #ff3333;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+.lowPriorities {
+  border: 8px solid #aaff00;
+}
+.mediumPriorities {
+  border: 8px solid #ffbd33;
+}
+.highPriorities {
+  border: 8px solid #ff3333;
+}
+#searchInput {
+  width: 80%;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  border-radius: 10px;
+}
